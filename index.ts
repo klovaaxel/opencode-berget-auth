@@ -17,8 +17,12 @@
  * @see https://opencode.ai/docs/plugins
  */
 
-// Export the plugin function directly as default (OpenCode loads default export)
-export { BergetAuthPlugin as default } from './src/plugin';
+import { BergetAuthPlugin } from './src/plugin';
+import { BergetV2Plugin } from './src/v2';
+
+// One default export for both runtimes: OpenCode V2 reads id + setup,
+// OpenCode V1 (1.18.29+) reads server()
+export default { ...BergetV2Plugin, server: BergetAuthPlugin };
 
 // Also export as PluginModule format for compatibility
 export { BergetAuthPlugin as server } from './src/plugin';
@@ -30,6 +34,7 @@ export { BergetAuthPlugin, BergetOAuthPlugin } from './src/plugin';
 export { accessTokenExpired, isOAuthAuth } from './src/plugin/auth';
 
 export { createPkceAuthorizeMethod } from './src/plugin/pkce-flow';
+
 // Re-export types for consumers
 export type {
   AuthDetails,
@@ -37,3 +42,4 @@ export type {
   BergetUser,
   OAuthAuthDetails,
 } from './src/plugin/types';
+export { BergetV2Plugin } from './src/v2';

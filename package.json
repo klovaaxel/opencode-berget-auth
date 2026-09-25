@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@opencode/plugin": "2.0.16",
     "@types/bun": "latest",
     "@types/node": "^22.0.0",
     "@types/qrcode": "^1.5.6",

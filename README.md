@@ -42,6 +42,18 @@ For API key users:
 2. Select "Berget API Key - Enter API key manually"
 3. Paste your key — persisted across sessions
 
+## OpenCode V2
+
+The same package loads in OpenCode V2 (`@opencode/cli` 2.x). V2 uses the `plugins` key:
+
+```json
+{
+  "plugins": ["@bergetai/opencode-auth"]
+}
+```
+
+Sign in with `opencode auth login berget`, or `/connect` in the terminal UI, and pick one of the Berget Code Seat methods. V2 stores the credential and refreshes it through the plugin, and the Berget models come from V2's built-in catalog. API keys use V2's built-in Berget key method.
+
 ## How It Works
 
 - **PKCE Authorization Flow** for browser login (magic link)
