@@ -21,7 +21,7 @@ import { BergetAuthPlugin } from './src/plugin';
 import { BergetV2Plugin } from './src/v2';
 
 // One default export for both runtimes: OpenCode V2 reads id + setup,
-// OpenCode V1 (1.18.29+) reads server()
+// OpenCode V1 reads server() (loader verified 1.3.13 through 1.18.32)
 export default { ...BergetV2Plugin, server: BergetAuthPlugin };
 
 // Also export as PluginModule format for compatibility
